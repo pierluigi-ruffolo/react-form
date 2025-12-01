@@ -7,11 +7,15 @@ function App() {
     "Ritorno alla Luna: la nuova corsa allo spazio e le sue implicazioni",
   ]);
   const [inputValue, SetInputValue] = useState("");
+  const [error, SetError] = useState(false);
 
   const handleAddArticle = (event) => {
     event.preventDefault();
     if (inputValue === "") {
-      return console.log("inserisci un titolo");
+      SetError(true);
+      setTimeout(() => {
+        SetError(false);
+      }, 3000);
     } else {
       setArticles([inputValue, ...articles]);
       SetInputValue("");
@@ -35,7 +39,7 @@ function App() {
             />
             <button type="submit">Aggiungi</button>
           </form>
-
+          <p className={error ? "" : "d-none"}>inserisci input validi!!</p>
           <ul>
             {articles.map((article, index) => {
               return (

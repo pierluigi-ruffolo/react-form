@@ -62,3 +62,13 @@ li button {
   background-color: rgba(255, 0, 0, 0.691);
   border: none;
 }
+
+.d-none {
+  display: none;
+}
+p {
+  text-align: center;
+  margin: 20px;
+  font-size: 2rem;
+  color: red;
+}
