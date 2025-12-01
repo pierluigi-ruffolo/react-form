@@ -14,8 +14,10 @@ function App() {
       return console.log("inserisci un titolo");
     } else {
       setArticles([inputValue, ...articles]);
+      SetInputValue("");
     }
   };
+
   return (
     <>
       <header>
@@ -36,7 +38,23 @@ function App() {
 
           <ul>
             {articles.map((article, index) => {
-              return <li key={index}>{article}</li>;
+              return (
+                <li key={index}>
+                  {article}
+                  <button
+                    onClick={() => {
+                      const newArticle = articles.filter(
+                        (filterarticle, articleindex) => {
+                          return index !== articleindex;
+                        }
+                      );
+                      setArticles(newArticle);
+                    }}
+                  >
+                    🗑️
+                  </button>
+                </li>
+              );
             })}
           </ul>
         </div>

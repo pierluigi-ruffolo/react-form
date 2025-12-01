@@ -45,11 +45,20 @@ input {
   font-size: 2rem;
 }
 
-button {
+form button {
   margin-left: 20px;
   width: 15%;
   height: 50px;
   font-size: 2rem;
   background-color: orange;
+  border: none;
+}
+
+li button {
+  margin-left: 20px;
+  width: 10%;
+  height: 50px;
+  font-size: 2rem;
+  background-color: rgba(255, 0, 0, 0.691);
   border: none;
 }
